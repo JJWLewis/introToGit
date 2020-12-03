@@ -41,4 +41,9 @@ To move a file from the git statging area into the git directory, you must commi
 This will open a new window in default editor to add a commit message. Easier to use
     git commit -m "commit message"
 
+## removing files
+
+If you delete a file from the repository, git add won't help. You need to remove that file from the watch
+
+    git rm file.txt
 
