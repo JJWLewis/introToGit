@@ -43,7 +43,7 @@ When you need to ignore a file, either a default of a local passwords file, crea
 | git mv	        |Similar to the Linux `mv` command, this moves a file|
 | git rm	        |Similar to the Linux `rm` command, this deletes, or removes a file|
 
-# Undoing things
+# Undoing recent things
 
 ## Revert unstaged changes
 
@@ -52,4 +52,33 @@ If you've made changes that you want to get rid of, just checkout over the top o
     git checkout file.txt
 
 ## Revert staged changes
+
+To unstage a file, use git reset along with where to reset it from, this is typically 'HEAD'
+
+    git reset HEAD badfile.txt
+
+## Amending the last commit
+
+If you realise you've missed a file, or need to update the message etc. then
+
+    git commit --amend
+
+This will overwrite the previous commit with whatever is in your stage. So if you forgot to add a file, just add it, then run --amend.
+Don't use for public commits that have been pushed
+
+## Rollbacks
+
+To rollback in git you don't want to simply rollback delete your latest commit. You want to just do the opposite
+diff to remove those changes, and still preserve history
+
+    git revert head
+
+This will pop up with a commit message, expand on this as to why the change had to be backed out
+
+# Undoing things from a while ago
+
+Find the git id of where you want to rollback to
+
+    git log 
+
 
