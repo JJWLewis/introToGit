@@ -1,0 +1,19 @@
+# Diff (the world before Git)
+
+To use diff on the command line, just type
+    diff -u file1 file2
+
+## Generating diff files
+
+When you need to send suggested changes to someone, it's easiest to send a diff. Once you've made the changes in a second file, create the diff by using:
+
+    diff -u old_file new_file > change.diff
+
+These are sometimes called patch files.
+
+## Applying diff/patch files
+
+To automatically apply a patch file
+
+    patch old_file < patch_file
+
