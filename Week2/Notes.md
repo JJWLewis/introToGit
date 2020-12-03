@@ -53,3 +53,17 @@ If you've made changes that you want to get rid of, just checkout over the top o
 
 ## Revert staged changes
 
+To unstage a file, use git reset along with where to reset it from, this is typically 'HEAD'
+
+    git reset HEAD badfile.txt
+
+## Amending the last commit
+
+If you realise you've missed a file, or need to update the message etc. then
+
+    git commit --amend
+
+This will overwrite the previous commit with whatever is in your stage. So if you forgot to add a file, just add it, then run --amend.
+Don't use for public commits that have been pushed
+
+
